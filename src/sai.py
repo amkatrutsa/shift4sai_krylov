@@ -43,7 +43,6 @@ def expm_ArnoldiSAI(A, v, t, gamma, tol, max_iter, disp=True, A_lu=None):
             ej[j] = 1
             invH = np.linalg.inv(H[:j+1, :j+1])
             Hjj = (invH - np.eye(j+1)) / gamma
-    #         print(Hjj)
             C = np.linalg.norm(I_gammaA.dot(w))
             s = np.array([1/3, 2/3, 1]) * t
             beta_j = np.zeros_like(s)
@@ -61,7 +60,6 @@ def expm_ArnoldiSAI(A, v, t, gamma, tol, max_iter, disp=True, A_lu=None):
                 print('warning: no convergence within m steps')
 
             V[:, j+1] = w / H[j+1, j]
-#         u = u[:, np.newaxis]
         y = V[:, :j+1] @ (beta * u)
         y_all[:, k] = y
         res_norm_all[k] = resnorm
