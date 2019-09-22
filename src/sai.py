@@ -30,7 +30,7 @@ def expm_ArnoldiSAI(A, v, t, gamma, tol, max_iter, disp=True, A_lu=None):
         V[:, 0] = v[:, k] / beta
 
         for j in range(max_iter):
-            w = A_lu.solve(V[:, j]) # Q*( U\( L\(P*V(:,j)) ) );
+            w = A_lu.solve(V[:, j])
 
             for i in range(j+1):
                 H[i, j] = w @ V[:, i]
@@ -97,7 +97,7 @@ def expm_ArnoldiSAI2_der(A, v, t, gamma, tol, max_iter, disp=True, A_lu=None):
         w = A_lu.solve(V[:, j])
         w2 = A_lu.solve(V2[:, j])
         
-        res2 = V2[:, j] - (w2 + gamma2 * (A.dot(w2))) # (gamma-gamma2)*A*w2;
+        res2 = V2[:, j] - (w2 + gamma2 * (A.dot(w2)))
         w2 = w2 + A_lu.solve(res2)
 
         for i in range(j+1):
