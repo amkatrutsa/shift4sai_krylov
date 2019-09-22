@@ -5,9 +5,10 @@ import scipy.linalg as splin
 
 def expm_ArnoldiSAI(A, v, t, gamma, tol, max_iter, disp=True, A_lu=None):
     '''
-    Shift-and-invert Krylov method to compute exp(-tA)v with tolerance tol, used shift gamma
-    and maximum number of Arnoldi iterations max_iter.
-    If LU factorization of the matrix I + gamma*A is given in A_lu, then it is used in solving linear systems 
+    Shift-and-invert Krylov method to compute exp(-tA)v with tolerance tol, 
+    used shift gamma and maximum number of Arnoldi iterations max_iter.
+    If LU factorization of the matrix I + gamma*A is given in A_lu, 
+    then it is used in solving linear systems 
     '''
     n = v.shape[0]
     convergence = np.zeros(max_iter)
