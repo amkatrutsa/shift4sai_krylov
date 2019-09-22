@@ -67,6 +67,12 @@ def expm_ArnoldiSAI(A, v, t, gamma, tol, max_iter, disp=True, A_lu=None):
     return y_all, resnorm, convergence / v.shape[1]
 
 def expm_ArnoldiSAI2_der(A, v, t, gamma, tol, max_iter, disp=True, A_lu=None):
+    '''
+    Modification of the SAI Krylov method 
+    which estimates the dertivative of the residual norm w.r.t. shift value.
+    The linear system for gamma' = gamma + 1e-7 is solved with 
+    preconditioned Richardson iteration
+    '''
     n = v.shape[0]
     V = np.zeros((n, max_iter+1))
     H = np.zeros((max_iter+1, max_iter))
