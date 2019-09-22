@@ -1,6 +1,6 @@
-# Practical shift choice in Shift-And-Invert Krylov method for computing matrix exponential
+# Practical shift choice in Shift-And-Invert Krylov method for matrix exponential evaluation
 
-Prerequisities:
+Prerequisites:
 - NumPy >= 1.16, SciPy >= 1.1, Matplotlib >= 3
 - PyAmg >= 4.0
 
