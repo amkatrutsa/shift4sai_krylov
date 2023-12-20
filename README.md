@@ -14,3 +14,15 @@ Prerequisites:
   - [Inceremental method](./anisotropic_diffusion/incremental.ipynb)
 
 * Source code for the SAI Krylov method is available [here](./src/sai.py)
+
+
+## Citing
+If you use this code in your research, please cite our preprint:
+```
+@article{katrutsa2019practical,
+  title={Practical shift choice in the shift-and-invert Krylov subspace evaluations of the matrix exponential},
+  author={Katrutsa, Alexandr and Botchev, Mike and Oseledets, Ivan},
+  journal={arXiv preprint arXiv:1909.13059},
+  year={2019}
+}
+```
